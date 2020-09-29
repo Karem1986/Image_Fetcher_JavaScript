@@ -31,6 +31,8 @@ class Store {
   }
 }
 
+//Download images urls
+
 function imageFetcher(url) {
   // console.log("image fetcher"); //tests the image fetcher
   //1. Define an empty array to place our images
@@ -46,4 +48,4 @@ function imageFetcher(url) {
   return downloadImages;
 }
 
-console.log(imageFetcher("url"));
+console.log(imageFetcher("url")); //By calling this function the user is able to download the images
