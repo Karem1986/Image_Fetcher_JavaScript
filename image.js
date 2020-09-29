@@ -7,8 +7,8 @@
 
 //2. Testing ?
 
-//3. Error handling: by making the local storage a promise,
-//error can be handled by a catch feature, in case there are no images to download.
+//3. Error handling: adding to local storage is a promise, thus
+//error can be handled with catch.
 
 //Local Storage--> LS
 
@@ -34,18 +34,22 @@ class Store {
 //Download images urls
 
 function imageFetcher(url) {
-  // console.log("image fetcher"); //tests the image fetcher
-  //1. Define an empty array to place our images
-  const downloadImages = [];
-  //2. Iterate
-  for (let i = 0; i < url.length; i++) {
-    const element = url[i];
-    const myImages = downloadImages.push("url"); //Push the urls to the empty []
+  // console.log("image fetcher"); //tests the image fetcher function
+  try {
+    //1. Define an empty array to place our images
+    const downloadImages = [];
+    //2. Iterate
+    for (let i = 0; i < url.length; i++) {
+      const element = url[i];
+      const myImages = downloadImages.push("url"); //Push the urls to the empty []
+    }
+
+    Store.addImagesLocalStorage(url);
+
+    return downloadImages;
+  } catch (error) {
+    console.log(error.message);
   }
-
-  Store.addImagesLocalStorage(url);
-
-  return downloadImages;
 }
 
 console.log(imageFetcher("url")); //By calling this function the user is able to download the images
