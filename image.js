@@ -5,7 +5,7 @@
 //1. Separation of concerns: taken care by different components
 //on this application: function and a class, each with its own task
 
-//2. Testing ?
+//2. Testing: not sure how to go about testing this program yet. Open to feedback.
 
 //3. Error handling: adding to local storage is a promise, thus
 //error can be handled with catch.
